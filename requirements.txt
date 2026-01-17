@@ -3,6 +3,7 @@ jinja2
 joblib
 numpy
 pandas
+requests
 scikit-learn
 torch
 transformers

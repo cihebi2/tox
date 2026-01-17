@@ -680,7 +680,7 @@ def main() -> int:
                     resolved_landing = resolve_openalex_landing(value, user_agent=user_agent, timeout_s=args.timeout)
                 elif id_type in ("pmid", "pmcid"):
                     # Try to map to DOI via Europe PMC, then use OA resolvers.
-                    query = f"EXT_ID:{value}"
+                    query = f"EXT_ID:{value}" if id_type == "pmid" else f"PMCID:{value}"
                     rec = resolve_europepmc_record(query, user_agent=user_agent, timeout_s=args.timeout)
                     doi = (rec or {}).get("doi")
                     if isinstance(doi, str) and DOI_RE.match(doi):
@@ -724,6 +724,8 @@ def main() -> int:
                 pmcid: Optional[str] = None
                 rec: Optional[dict[str, Any]] = None
                 if id_type == "pmcid":
+                    # Fast-path: when the input is a PMCID, directly try Europe PMC fullTextXML.
+                    # Avoid an extra "search" round-trip (PMCID:...) per item for large-scale runs.
                     pmcid = value
                 elif id_type == "pmid":
                     rec = resolve_europepmc_record(f"EXT_ID:{value}", user_agent=user_agent, timeout_s=args.timeout)
@@ -737,11 +739,14 @@ def main() -> int:
 
                 if isinstance(pmcid, str) and PMCID_RE.match(pmcid):
                     resolved_pmcid = pmcid
-                    # Only attempt XML when Europe PMC/PMC indicates OA.
-                    if rec is None:
-                        rec = resolve_europepmc_record(f"EXT_ID:{pmcid}", user_agent=user_agent, timeout_s=args.timeout)
-                    is_oa = (rec or {}).get("isOpenAccess") == "Y"
-                    in_pmc = (rec or {}).get("inPMC") == "Y"
+                    # Only attempt XML when Europe PMC/PMC indicates OA (except when input is already a PMCID).
+                    if id_type == "pmcid":
+                        is_oa = True
+                        in_pmc = True
+                    else:
+                        is_oa = (rec or {}).get("isOpenAccess") == "Y"
+                        in_pmc = (rec or {}).get("inPMC") == "Y"
+
                     if is_oa and in_pmc:
                         xml_url = resolve_fulltext_xml_url(pmcid)
                         xml_path = out_dir / f"{stem}.xml"
