@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-01-15 22:05:20 +0800",
+  "input_csv": "data/toxicity_data_v1/protein/dedup_resolved.csv",
+  "input_sha256": "6edec63a89023053fcaed21a7c63158772bbaae07e2cf7425ec41c2268501d5d",
+  "priority": [
+    {
+      "split": "independent",
+      "dataset_id": "toxdl2_independent"
+    },
+    {
+      "split": "test",
+      "dataset_id": "toxdl2_test"
+    },
+    {
+      "split": "val",
+      "dataset_id": "toxdl2_valid"
+    },
+    {
+      "split": "train",
+      "dataset_id": "toxdl2_train"
+    }
+  ],
+  "split_label_counts": [
+    {
+      "split": "independent",
+      "label": 0,
+      "n": 4710
+    },
+    {
+      "split": "independent",
+      "label": 1,
+      "n": 152
+    },
+    {
+      "split": "test",
+      "label": 0,
+      "n": 1734
+    },
+    {
+      "split": "test",
+      "label": 1,
+      "n": 112
+    },
+    {
+      "split": "train",
+      "label": 0,
+      "n": 9800
+    },
+    {
+      "split": "train",
+      "label": 1,
+      "n": 4900
+    },
+    {
+      "split": "val",
+      "label": 0,
+      "n": 853
+    },
+    {
+      "split": "val",
+      "label": 1,
+      "n": 78
+    }
+  ],
+  "total_rows": 22339
+}

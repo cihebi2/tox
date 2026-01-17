@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-01-15 16:42:53 +0800",
+  "seed": 69,
+  "ratios": {
+    "train": 0.8,
+    "val": 0.1,
+    "test": 0.1
+  },
+  "inputs": {
+    "id90_csv": "/root/private_data/aa_peptide/toxin/data/toxicity_data_v1/peptide_id90/dedup_id90_resolved.csv",
+    "members_csv": "/root/private_data/aa_peptide/toxin/data/toxicity_data_v1/peptide_id90/cluster_members.csv"
+  },
+  "outputs": {
+    "out_dir": "/root/private_data/aa_peptide/toxin/data/toxicity_data_v1/splits/peptide_id90_seed69_80_10_10",
+    "rep_counts_by_split": {
+      "test": {
+        "0": 762,
+        "1": 506,
+        "total": 1268
+      },
+      "train": {
+        "0": 6092,
+        "1": 4045,
+        "total": 10137
+      },
+      "val": {
+        "0": 761,
+        "1": 506,
+        "total": 1267
+      }
+    },
+    "exact_counts_by_split": {
+      "test": {
+        "0": 805,
+        "1": 649,
+        "total": 1454
+      },
+      "train": {
+        "0": 6551,
+        "1": 5158,
+        "total": 11709
+      },
+      "val": {
+        "0": 828,
+        "1": 684,
+        "total": 1512
+      }
+    }
+  }
+}

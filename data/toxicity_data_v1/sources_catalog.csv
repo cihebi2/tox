@@ -1,0 +1,19 @@
+dataset_id,project,level,split,file_path,label_rule
+toxgin_train,ToxGIN,peptide,train,/root/private_data/dd_model/ToxGIN/train_sequence.csv,"CSV column `label` (1=toxic, 0=non-toxic)."
+toxgin_test,ToxGIN,peptide,test,/root/private_data/dd_model/ToxGIN/test_sequence.csv,"CSV column `label` (1=toxic, 0=non-toxic)."
+toxipep_0.9_train,ToxiPep,peptide,train,/root/private_data/dd_model/ToxiPep/Dataset/0.9/train.txt,"FASTA header prefix: `>pos*` => 1, `>neg*` => 0."
+toxipep_0.9_test,ToxiPep,peptide,test,/root/private_data/dd_model/ToxiPep/Dataset/0.9/test.txt,"FASTA header prefix: `>pos*` => 1, `>neg*` => 0."
+toxipep_0.8_train,ToxiPep,peptide,train,/root/private_data/dd_model/ToxiPep/Dataset/0.8/train.txt,"FASTA header prefix: `>pos*` => 1, `>neg*` => 0."
+toxipep_0.8_test,ToxiPep,peptide,test,/root/private_data/dd_model/ToxiPep/Dataset/0.8/test.txt,"FASTA header prefix: `>pos*` => 1, `>neg*` => 0."
+toxipep_independent,ToxiPep,peptide,independent,/root/private_data/dd_model/ToxiPep/Dataset/Independent set/independent test set.txt,"FASTA header prefix: `>pos*` => 1, `>neg*` => 0."
+toxmsrc_train,ToxMSRC,peptide,train,/root/private_data/dd_model/ToxMSRC/Raw data/train_data.fasta,"FASTA header suffix: `|1` => 1, `|0` => 0."
+toxmsrc_test1,ToxMSRC,peptide,test1,/root/private_data/dd_model/ToxMSRC/Raw data/test1.fasta,"FASTA header suffix: `|1` => 1, `|0` => 0."
+toxmsrc_test2,ToxMSRC,peptide,test2,/root/private_data/dd_model/ToxMSRC/Raw data/test2.fasta,"FASTA header suffix: `|1` => 1, `|0` => 0."
+hypeptoxfuse_train_pos,HyPepTox-Fuse,peptide,train_pos,/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/train_pos.fa,File-level label: `train_pos.fa` => 1.
+hypeptoxfuse_train_neg,HyPepTox-Fuse,peptide,train_neg,/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/train_neg.fa,File-level label: `train_neg.fa` => 0.
+hypeptoxfuse_test_pos,HyPepTox-Fuse,peptide,test_pos,/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/test_pos.fa,File-level label: `test_pos.fa` => 1.
+hypeptoxfuse_test_neg,HyPepTox-Fuse,peptide,test_neg,/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/test_neg.fa,File-level label: `test_neg.fa` => 0.
+toxdl2_train,ToxDL2,protein,train,/root/private_data/dd_model/ToxDL2/data/protein_sequences/train.fasta,FASTA header last token is label (0/1).
+toxdl2_valid,ToxDL2,protein,valid,/root/private_data/dd_model/ToxDL2/data/protein_sequences/valid.fasta,FASTA header last token is label (0/1).
+toxdl2_test,ToxDL2,protein,test,/root/private_data/dd_model/ToxDL2/data/protein_sequences/test.fasta,FASTA header last token is label (0/1).
+toxdl2_independent,ToxDL2,protein,independent,/root/private_data/dd_model/ToxDL2/data/protein_sequences/independent.fasta,FASTA header last token is label (0/1).

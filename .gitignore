@@ -15,7 +15,22 @@ env/
 # Local outputs / large artifacts
 artifacts/
 artifacts_tmp/
-data/
+
+# Data
+# Keep curated datasets under `data/` (e.g. `data/toxicity_data_v1/`), but ignore
+# large derived caches and external databases.
+data/feature_cache_v*/
+data/feature_cache_*/
+data/**/feature_cache*/
+data/db*/
+data/databases*/
+data/external*/
+data/mmseqs*/
+data/uniref*/
+data/uniprot*/
+data/pfam*/
+data/nr*/
+data/colabfold*/
 
 # Large docs (papers / PDFs)
 docs/papers/

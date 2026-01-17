@@ -1,0 +1,45 @@
+{
+  "input_csv": "/root/private_data/aa_peptide/toxin/data/toxicity_data_v1/peptide/dedup_resolved.csv",
+  "output_dir": "/root/private_data/aa_peptide/toxin/data/toxicity_data_v1/peptide_id90",
+  "params": {
+    "identity": 0.9,
+    "word_length": 2,
+    "threads": 0,
+    "memory_mb": 0,
+    "min_length": 1,
+    "aS": 0.9,
+    "aL": 0.9,
+    "global_identity": 1,
+    "desc_len": 0
+  },
+  "input": {
+    "n_sequences": 14675,
+    "label_counts": {
+      "0": 8184,
+      "1": 6491
+    }
+  },
+  "neg": {
+    "n_clusters": 7615,
+    "n_members": 8184,
+    "cluster_size_min": 1,
+    "cluster_size_p50": 1,
+    "cluster_size_p95": 1,
+    "cluster_size_max": 14
+  },
+  "pos": {
+    "n_clusters": 5057,
+    "n_members": 6491,
+    "cluster_size_min": 1,
+    "cluster_size_p50": 1,
+    "cluster_size_p95": 2,
+    "cluster_size_max": 24
+  },
+  "output": {
+    "n_sequences": 12672,
+    "label_counts": {
+      "0": 7615,
+      "1": 5057
+    }
+  }
+}

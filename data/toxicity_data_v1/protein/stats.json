@@ -1,0 +1,79 @@
+{
+  "level": "protein",
+  "n_raw_records": 22340,
+  "n_raw_unique_sequences": 22339,
+  "n_dedup_resolved": 22339,
+  "n_dedup_conflicts": 0,
+  "n_duplicates_collapsed": 1,
+  "n_cross_dataset_overlap_sequences": 1,
+  "per_source": [
+    {
+      "dataset_id": "toxdl2_train",
+      "project": "ToxDL2",
+      "level": "protein",
+      "split": "train",
+      "file_path": "/root/private_data/dd_model/ToxDL2/data/protein_sequences/train.fasta",
+      "label_rule": "FASTA header last token is label (0/1).",
+      "total_records": 14700,
+      "kept_records": 14700,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 9800,
+        "1": 4900
+      }
+    },
+    {
+      "dataset_id": "toxdl2_valid",
+      "project": "ToxDL2",
+      "level": "protein",
+      "split": "valid",
+      "file_path": "/root/private_data/dd_model/ToxDL2/data/protein_sequences/valid.fasta",
+      "label_rule": "FASTA header last token is label (0/1).",
+      "total_records": 931,
+      "kept_records": 931,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 853,
+        "1": 78
+      }
+    },
+    {
+      "dataset_id": "toxdl2_test",
+      "project": "ToxDL2",
+      "level": "protein",
+      "split": "test",
+      "file_path": "/root/private_data/dd_model/ToxDL2/data/protein_sequences/test.fasta",
+      "label_rule": "FASTA header last token is label (0/1).",
+      "total_records": 1847,
+      "kept_records": 1847,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 1735,
+        "1": 112
+      }
+    },
+    {
+      "dataset_id": "toxdl2_independent",
+      "project": "ToxDL2",
+      "level": "protein",
+      "split": "independent",
+      "file_path": "/root/private_data/dd_model/ToxDL2/data/protein_sequences/independent.fasta",
+      "label_rule": "FASTA header last token is label (0/1).",
+      "total_records": 4862,
+      "kept_records": 4862,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 4710,
+        "1": 152
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "tool": "cd-hit",
+  "params": {
+    "identity": 0.9,
+    "word_length": 2,
+    "threads": 0,
+    "memory_mb": 0,
+    "min_length": 1,
+    "aS": 0.9,
+    "aL": 0.9,
+    "global_identity": 1,
+    "desc_len": 0
+  },
+  "cd_hit_banner": "\t\t====== CD-HIT version 4.8.1 (built on Apr 24 2025) ======"
+}

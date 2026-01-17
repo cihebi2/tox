@@ -1,0 +1,247 @@
+{
+  "level": "peptide",
+  "n_raw_records": 40271,
+  "n_raw_unique_sequences": 15051,
+  "n_dedup_resolved": 14675,
+  "n_dedup_conflicts": 376,
+  "n_duplicates_collapsed": 25220,
+  "n_cross_dataset_overlap_sequences": 10970,
+  "per_source": [
+    {
+      "dataset_id": "toxgin_train",
+      "project": "ToxGIN",
+      "level": "peptide",
+      "split": "train",
+      "file_path": "/root/private_data/dd_model/ToxGIN/train_sequence.csv",
+      "label_rule": "CSV column `label` (1=toxic, 0=non-toxic).",
+      "total_rows": 3864,
+      "kept_rows": 3864,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 1932,
+        "1": 1932
+      }
+    },
+    {
+      "dataset_id": "toxgin_test",
+      "project": "ToxGIN",
+      "level": "peptide",
+      "split": "test",
+      "file_path": "/root/private_data/dd_model/ToxGIN/test_sequence.csv",
+      "label_rule": "CSV column `label` (1=toxic, 0=non-toxic).",
+      "total_rows": 564,
+      "kept_rows": 564,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 282,
+        "1": 282
+      }
+    },
+    {
+      "dataset_id": "toxipep_0.9_train",
+      "project": "ToxiPep",
+      "level": "peptide",
+      "split": "train",
+      "file_path": "/root/private_data/dd_model/ToxiPep/Dataset/0.9/train.txt",
+      "label_rule": "FASTA header prefix: `>pos*` => 1, `>neg*` => 0.",
+      "total_records": 7056,
+      "kept_records": 7056,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 3528,
+        "1": 3528
+      }
+    },
+    {
+      "dataset_id": "toxipep_0.9_test",
+      "project": "ToxiPep",
+      "level": "peptide",
+      "split": "test",
+      "file_path": "/root/private_data/dd_model/ToxiPep/Dataset/0.9/test.txt",
+      "label_rule": "FASTA header prefix: `>pos*` => 1, `>neg*` => 0.",
+      "total_records": 1766,
+      "kept_records": 1766,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 883,
+        "1": 883
+      }
+    },
+    {
+      "dataset_id": "toxipep_0.8_train",
+      "project": "ToxiPep",
+      "level": "peptide",
+      "split": "train",
+      "file_path": "/root/private_data/dd_model/ToxiPep/Dataset/0.8/train.txt",
+      "label_rule": "FASTA header prefix: `>pos*` => 1, `>neg*` => 0.",
+      "total_records": 5544,
+      "kept_records": 5544,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 2772,
+        "1": 2772
+      }
+    },
+    {
+      "dataset_id": "toxipep_0.8_test",
+      "project": "ToxiPep",
+      "level": "peptide",
+      "split": "test",
+      "file_path": "/root/private_data/dd_model/ToxiPep/Dataset/0.8/test.txt",
+      "label_rule": "FASTA header prefix: `>pos*` => 1, `>neg*` => 0.",
+      "total_records": 1388,
+      "kept_records": 1388,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 694,
+        "1": 694
+      }
+    },
+    {
+      "dataset_id": "toxipep_independent",
+      "project": "ToxiPep",
+      "level": "peptide",
+      "split": "independent",
+      "file_path": "/root/private_data/dd_model/ToxiPep/Dataset/Independent set/independent test set.txt",
+      "label_rule": "FASTA header prefix: `>pos*` => 1, `>neg*` => 0.",
+      "total_records": 958,
+      "kept_records": 958,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 479,
+        "1": 479
+      }
+    },
+    {
+      "dataset_id": "toxmsrc_train",
+      "project": "ToxMSRC",
+      "level": "peptide",
+      "split": "train",
+      "file_path": "/root/private_data/dd_model/ToxMSRC/Raw data/train_data.fasta",
+      "label_rule": "FASTA header suffix: `|1` => 1, `|0` => 0.",
+      "total_records": 6387,
+      "kept_records": 6387,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 4569,
+        "1": 1818
+      }
+    },
+    {
+      "dataset_id": "toxmsrc_test1",
+      "project": "ToxMSRC",
+      "level": "peptide",
+      "split": "test1",
+      "file_path": "/root/private_data/dd_model/ToxMSRC/Raw data/test1.fasta",
+      "label_rule": "FASTA header suffix: `|1` => 1, `|0` => 0.",
+      "total_records": 1126,
+      "kept_records": 1126,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 806,
+        "1": 320
+      }
+    },
+    {
+      "dataset_id": "toxmsrc_test2",
+      "project": "ToxMSRC",
+      "level": "peptide",
+      "split": "test2",
+      "file_path": "/root/private_data/dd_model/ToxMSRC/Raw data/test2.fasta",
+      "label_rule": "FASTA header suffix: `|1` => 1, `|0` => 0.",
+      "total_records": 582,
+      "kept_records": 582,
+      "dropped_unknown_label": 0,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 536,
+        "1": 46
+      }
+    },
+    {
+      "dataset_id": "hypeptoxfuse_train_pos",
+      "project": "HyPepTox-Fuse",
+      "level": "peptide",
+      "split": "train_pos",
+      "file_path": "/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/train_pos.fa",
+      "label_rule": "File-level label: `train_pos.fa` => 1.",
+      "fixed_label": 1,
+      "total_records": 4414,
+      "kept_records": 4414,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 0,
+        "1": 4414
+      }
+    },
+    {
+      "dataset_id": "hypeptoxfuse_train_neg",
+      "project": "HyPepTox-Fuse",
+      "level": "peptide",
+      "split": "train_neg",
+      "file_path": "/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/train_neg.fa",
+      "label_rule": "File-level label: `train_neg.fa` => 0.",
+      "fixed_label": 0,
+      "total_records": 4414,
+      "kept_records": 4414,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 4414,
+        "1": 0
+      }
+    },
+    {
+      "dataset_id": "hypeptoxfuse_test_pos",
+      "project": "HyPepTox-Fuse",
+      "level": "peptide",
+      "split": "test_pos",
+      "file_path": "/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/test_pos.fa",
+      "label_rule": "File-level label: `test_pos.fa` => 1.",
+      "fixed_label": 1,
+      "total_records": 1104,
+      "kept_records": 1104,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 0,
+        "1": 1104
+      }
+    },
+    {
+      "dataset_id": "hypeptoxfuse_test_neg",
+      "project": "HyPepTox-Fuse",
+      "level": "peptide",
+      "split": "test_neg",
+      "file_path": "/root/private_data/dd_model/toxin/HyPepTox-Fuse/raw_dataset/test_neg.fa",
+      "label_rule": "File-level label: `test_neg.fa` => 0.",
+      "fixed_label": 0,
+      "total_records": 1104,
+      "kept_records": 1104,
+      "dropped_invalid_seq": 0,
+      "normalized_changed": 0,
+      "label_counts": {
+        "0": 1104,
+        "1": 0
+      }
+    }
+  ]
+}
