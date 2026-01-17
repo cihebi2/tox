@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>预测结果</title>
+    <style>
+      body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto; margin: 2rem; }
+      .card { max-width: 1100px; padding: 1rem 1.25rem; border: 1px solid #e5e7eb; border-radius: 12px; }
+      .muted { color: #6b7280; }
+      .error { color: #b91c1c; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { border-bottom: 1px solid #e5e7eb; padding: 0.5rem; text-align: left; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <p><a href="/">← 返回</a></p>
+      {% if error %}
+        <p class="error">{{ error }}</p>
+      {% else %}
+        <h2>输入序列</h2>
+        <p><code>{{ sequence }}</code></p>
+        <p class="muted">model: <code>{{ model_path }}</code> | retrieval: <code>{{ retrieval_path }}</code></p>
+
+        <h2>预测</h2>
+        <ul>
+          <li>p(toxic): <code>{{ '%.4f'|format(pred.p_toxic) }}</code></li>
+          <li>pred_label: <code>{{ pred.pred_label }}</code></li>
+          <li>confidence(1-uncertainty): <code>{{ '%.4f'|format(pred.confidence) }}</code></li>
+          <li>uncertainty(K/sum(alpha)): <code>{{ '%.4f'|format(pred.uncertainty) }}</code></li>
+          <li>total_evidence(sum(alpha)-K): <code>{{ '%.4f'|format(pred.total_evidence) }}</code></li>
+        </ul>
+
+        <h2>证据检索（训练集相似序列）</h2>
+        {% if neighbors|length == 0 %}
+          <p class="muted">未加载 retrieval index 或 TopK=0。</p>
+        {% else %}
+          <table>
+            <thead>
+              <tr><th>rank</th><th>similarity</th><th>label</th><th>sequence</th></tr>
+            </thead>
+            <tbody>
+              {% for n in neighbors %}
+                <tr>
+                  <td>{{ loop.index }}</td>
+                  <td><code>{{ '%.4f'|format(n.similarity) }}</code></td>
+                  <td><code>{{ n.label }}</code></td>
+                  <td><code>{{ n.sequence }}</code></td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% endif %}
+
+        <h2>改造建议（单点突变，按低毒性概率排序）</h2>
+        <p class="muted">说明：这是“计算机建议”，仅用于启发；请结合功能保持、理化约束与实验验证。</p>
+        <table>
+          <thead>
+            <tr><th>rank</th><th>mutation</th><th>p(toxic)</th><th>confidence</th><th>mutant</th></tr>
+          </thead>
+          <tbody>
+            {% for s in suggestions %}
+              <tr>
+                <td>{{ loop.index }}</td>
+                <td><code>{{ s.from }}{{ s.position }}{{ s.to }}</code></td>
+                <td><code>{{ '%.4f'|format(s.p_toxic) }}</code></td>
+                <td><code>{{ '%.4f'|format(s.confidence) }}</code></td>
+                <td><code>{{ s.mutant }}</code></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Local outputs / large artifacts
+artifacts/
+artifacts_tmp/
+data/
+
+# Large docs (papers / PDFs)
+docs/papers/
+docs/papers*/
+docs/*.pdf
+docs/**/*.pdf
+docs/runs/
+docs/**/*.xml
+docs/**/*.jsonl
+docs/**/*.csv
+docs/experimental_candidate*
+docs/experimental_candidates*
+
+# Model / feature caches
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.joblib
+
+# OS
+.DS_Store
